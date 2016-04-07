@@ -29,7 +29,11 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#ifdef WIN32
+#include "unistd.h"
+#else
 #include <unistd.h>
+#endif
 #include <string.h>
 
 #ifdef WIN32
@@ -147,7 +151,8 @@ serial_cfg(_pic * pic)
 
     switch(((int)((pic->serialexbaud/300.0)+0.5))) 
     {
-       case 0 ... 1:
+		case 0:
+		case 1:
           pic->serialbaud=300;
           #ifndef WIN32
           BAUDRATE=B300;
@@ -155,7 +160,8 @@ serial_cfg(_pic * pic)
           BAUDRATE=300;
           #endif  
           break; 
-       case 2 ... 3:
+		case 2:
+		case 3:
           pic->serialbaud=600;
           #ifndef WIN32
           BAUDRATE=B600;
@@ -163,7 +169,10 @@ serial_cfg(_pic * pic)
           BAUDRATE=600;
           #endif  
           break; 
-       case 4 ... 7:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
           pic->serialbaud=1200;
           #ifndef WIN32
           BAUDRATE=B1200;
@@ -171,7 +180,14 @@ serial_cfg(_pic * pic)
           BAUDRATE=1200;
           #endif  
           break; 
-       case 8 ... 15:
+       case 8:
+	   case 9:
+	   case 10:
+	   case 11:
+	   case 12:
+	   case 13:
+	   case 14:
+	   case 15:
           pic->serialbaud=2400;
           #ifndef WIN32
           BAUDRATE=B2400;
@@ -179,7 +195,22 @@ serial_cfg(_pic * pic)
           BAUDRATE=2400;
           #endif  
           break; 
-       case 16 ... 31:
+       case 16:
+	   case 17:
+	   case 18:
+	   case 19:
+	   case 20:
+	   case 21:
+	   case 22:
+	   case 23:
+	   case 24:
+	   case 25:
+	   case 26:
+	   case 27:
+	   case 28:
+	   case 29:
+	   case 30:
+	   case 31:
           pic->serialbaud=4800;
           #ifndef WIN32
           BAUDRATE=B4800;

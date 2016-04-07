@@ -38,13 +38,17 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -66,15 +70,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ansi.h" />
+    <ClInclude Include="getopt.h" />
     <ClInclude Include="p16fxxx_defs.h" />
     <ClInclude Include="p18fxxx_defs.h" />
     <ClInclude Include="periferic.h" />
     <ClInclude Include="periferic18.h" />
     <ClInclude Include="picsim.h" />
-    <ClInclude Include="unisted.h" />
+    <ClInclude Include="unistd.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common.c" />
+    <ClCompile Include="getopt.c" />
     <ClCompile Include="hexfile.c" />
     <ClCompile Include="icsp.c" />
     <ClCompile Include="icsp18.c" />

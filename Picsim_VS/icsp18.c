@@ -27,7 +27,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#ifdef WIN32
+// necesssary to create own unisted.h header
+// and place in root of project files
+#include "unistd.h"
+#else
 #include<unistd.h>
+#endif
 #include"picsim.h"
 
 #ifdef WIN32

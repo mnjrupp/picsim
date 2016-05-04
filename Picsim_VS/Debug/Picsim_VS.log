@@ -1,0 +1,11 @@
+﻿Build started 4/19/2016 12:53:15 PM.
+     1>Project "C:\Users\0018506\Documents\Visual Studio 2013\Projects\Picsim_VS\Picsim_VS.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(355,5): warning MSB8003: Could not find WindowsSDKDir variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(C:\Users\0018506\Documents\Visual Studio 2013\Projects\Picsim_VS\Debug\Picsim_VS) does not match the Linker's OutputFile property value (C:\Users\0018506\Documents\Visual Studio 2013\Projects\Picsim_VS\Debug\Picsim_VS.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>Link:
+         Picsim_VS.vcxproj -> C:\Users\0018506\Documents\Visual Studio 2013\Projects\Picsim_VS\Debug\Picsim_VS
+     1>Done Building Project "C:\Users\0018506\Documents\Visual Studio 2013\Projects\Picsim_VS\Picsim_VS.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.18
